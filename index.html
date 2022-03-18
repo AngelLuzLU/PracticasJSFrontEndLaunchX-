@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex PokéAPI</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+</head>
+<header>
+    <img src="./Assets/img/logo.png" alt="Logo pokédex" class="headerImg">
+</header>
+<body>
+    <button class="about" id="about">?</button>
+    <section class="aboutsec" id="aboutsec" style="display:none;">
+        <p>Para <b>buscar un pokemon</b>, ingrese su número de pokédex o el nombre del pokémon.</p>
+        <p>Puede <b>cambiar de vista</b> haciendo uso de los botones de la parte inferior izquierda.</p>
+        <p>Si puede ver a <b>psyduck confundido</b>, quiere decir que ha ocurrido algún error al buscar la información del pokémon, verifique haber escrito el nombre correctamente; si el error persiste, puede que el servicio no se encuentre disponible.</p>
+        <p>Los <b>movimientos</b> con nivel 0 se aprenden por medios especiales como eclosión, TM/HM, tutores, etc.</p>
+        <p>Gracias por usar esta pokédex!</p>
+    </section>
+    <div id="Main">
+        <div class="left">
+        <section class="formsection">     
+            <input type="text" id="PokeName" class="borders">
+            <button id="submitbtn" class="submit">Buscar</button>
+        </section>
+        <section class="pokemon">
+            <div class="imgcont borders">
+                <img src="./Assets/img/superball.png" alt="Imágen del pokémon" id="PokeImg">
+            </div>
+            <div class="namecont borders">
+                <div class="pokenumero text1" id="pokenumero"></div>
+                <div class="pokenombre text1" id="pokenombre"></div>  
+            </div>
+            <div class="decoration">
+                <button></button>
+                <div class="triangles">
+                    <div class="triangulo1">
+                        <div class="inner1"></div>
+                    </div>
+                    <div class="triangulo2">
+                            <div class="inner2"></div> 
+                    </div>
+                </div>
+                <button></button>
+            </div>
+        </section>
+        </div>
+        <div class="right">
+        <section class="pokedata borders" id="DataSection">
+            <p class="text1 info">Info</p>
+            <hr class="line1">
+            <div class="poketypes">
+                <p class="text2" style="margin-top: 10px;">Tipo</p>
+                <div  id="poketypes"></div>
+            </div>
+            <div class="pokestats">
+                <p class="text2" style="text-align: center; margin-bottom: 5px;">Estadísticas</p>
+                <div class="statcont">
+                    <p class="stattext">HP</p>
+                    <div class="pokehp" id="pokehp"></div>
+                    <div class="statbar">
+                        <div id="hpbar" class="bar hp"></div>
+                    </div>
+                </div>
+                <div class="statcont">
+                    <p class="stattext">Attack</p>
+                    <div class="pokeattack" id="pokeattack"></div>
+                    <div class="statbar">
+                        <div id="atkbar" class="bar atk"></div>
+                    </div>
+                </div>
+                <div class="statcont">
+                    <p class="stattext">Defense</p>
+                    <div class="pokedef" id="pokedef"></div>
+                    <div class="statbar">
+                        <div id="defbar" class="bar def"></div>
+                    </div>
+                </div>
+                <div class="statcont">
+                    <p class="stattext">Sp.Attack</p>
+                    <div class="pokesattack" id="pokesattack"></div>
+                    <div class="statbar">
+                        <div id="satkbar" class="bar satk"></div>
+                    </div>
+                </div>
+                <div class="statcont">
+                    <p class="stattext">Sp.Defense</p>
+                    <div class="pokesdef" id="pokesdef"></div>
+                    <div class="statbar">
+                        <div id="sdefbar" class="bar sdef"></div>
+                    </div>
+                </div>
+                <div class="statcont">
+                    <p class="stattext">Speed</p>
+                    <div class="pokespeed" id="pokespeed"></div>
+                    <div class="statbar">
+                        <div id="speedbar" class="bar speed"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="pokedata borders" id="MovesSection" style="display: none;">
+            <p class="text1 info">Movimientos</p>
+            <hr class="line1">
+            <div class="abilitiesCont text2">
+                <p>Habilidades</p>
+                <div class="habilidades" id="habilidades"></div>
+                <p class="habilidadestext">Ocultas</p>
+                <div class="habilidades"id="habilidadesOcultas"></div>
+            </div>
+            <div class="movesCont text2">
+                <p style="text-align: center;">Movimientos</p>
+                <div class="pokemoves" id="pokemoves" style="overflow-y: auto;"></div>
+            </div>
+        </section>
+        <section class="botones">
+            <button class="navBut" id="btnInfo">Info</button>
+            <button class="navButgrey" id="btnMoves">Movimientos</button>
+        </section>
+    </div>
+    
+    </div>
+</body>
+<footer>
+    <script src="./index.js"></script>
+</footer>
+</html>
